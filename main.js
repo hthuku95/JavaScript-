@@ -95,3 +95,19 @@ function buttonClick(e){
     console.log(e.shiftKey)
     console.log(e.ctrlKey)
 }
+
+var box = document.getElementById('box')
+var output = document.getElementById('output')
+
+box.addEventListener('mousemove',outputMouseMove)
+
+function outputMouseMove(e) {
+    console.log(e.type)
+    output.innerHTML ='<h3>mouseX:'+e.offsetX+'</h3><h3>MouseY:'+e.offsetY+'</h3>'
+    if (e.offsetX >150 && e.offsetY > 100) {
+        box.style.backgroundColor = '#dddd444'
+        output.style.backgroundColor= '#ddd444'
+    } else {
+        output.style.backgroundColor= 'red'
+    }
+}
